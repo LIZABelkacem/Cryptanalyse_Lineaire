@@ -1,0 +1,39 @@
+Exercice 02 :
+1/ A/ L'attaque qui permet de casser trivialement le chiffrement dans ce cas est l'attaque CPA où on dispose du texte en clair et en chiffré et on peut choisir le text clair .
+   B/ Avec un tour uniquement , le fait de connaitre les sorties de la Sbox permet de connaitre les entrées qui ont mené vers les sorties , ainsi il est facile de restituer la clef de chiffrement avec déduction .
+
+
+2/ Il ne suffit pas de répéter les deux opération précédentes pour casser un chiffrement à deux tour car dans ce cas il y a un double chiffrement et on ne dispose pas de la sortie de la première sbox c'est à dire la sortie issue du premier tour (elle est chiffrée et on la chiffre une seconde fois)
+
+3/ A/ Il y a un nombre de 16 clefs de tour  possibles car : la clef est codée sur 4 bits donc 2^4=16
+   B/Non , il ne suffit pas de tester toutes les clefs du premier tour pour déduire la clef du premier tour car il faut tester la clef si elle est réellement la bonne clef et pour se faire il faut faire un test IF mais on a pas de valeur pour faire le test de conditions donc même si on arrive à tester on ne saura pas si c'est la bonne clef.
+
+4/ Si on Si on définit “une étape” comme l’exécution d’un tour de notre algorithme de chiffrement, on aura au maximum 512 étapes 512=2⁴ * 2⁴ * 2
+car à la première étape on a 16 clefs possibles et 16 autres à la seconde étape ; et on répète deux fois puisqu'on dispose de de deux tours.
+
+5/ B/ On constate que l'hypothèse ne permet pas de vérifier.
+   C/ Notre hypothèse est en fin de compte réfutée car on ne fait le test que sur un seul message et non pas sur les 16 messages possibles c'est pourqoi on doit générer tous les messages possibles et faire les tests pour chacun d'entre eux donc on doit multuplier le nombre d'étape *16 
+   D/ POur rerépondre à la question 4 : Il nous faut 8192 étapes 8192 = 2⁴ * 2⁴ * 2⁴ * 2 .
+
+   
+
+Exercices 03 : 
+1/Notre fonction n'est pas linéaire car on ne peut pas savoir d'avance le résultat intermédiaire c'est à dire celui entre le tour1 et le tour2 car ce dernier est chiffré et on ne pas le trouver par observation c'est pourquoi la fonction n'est pas linéaire.
+
+
+Exercie 04: 
+2/ L'idée est d'avoir une fonction qui compare la parité du résultat du premier tour qu'on appelera t et celui du second tour qu'on appelera c . A chaque fois qu'on trouve la même parité entre t et c on incrémente un premier indice de 1 et si ce n'est pas le cas on décrémente un second indice de 1 .Les meilleurs scores sont ceux qui ont la une valeur absolu du compteur  la plus élevée .(on a mis deux compteur afin de connaitres les scores maximaux en échecs et en réussites)
+
+
+Exercice 05 :
+1/ Pour chacun des candidats 𝑘0, on peut facilement retrouver un potentiel 𝑘1 :On a déja eu un tableau avec les couples (message, crypté) chiffrés avec deux cléfs .
+Donc pour chaque k0 on teste tous les k1 possibles (16) et on associe le résultat  à celui du tableau de couples(message, crypté) et si les résultats sont égaux alors le k1 est le bon ainsi on aura retrouver le k1 pour chaque candidat k0.
+
+Exercices 06 :
+
+1/Le nombre d'étapes possibles est 
+
+2/L'attaque par cryptanalyse linéaire demande beaucoup moins d'étapes que l'attaque par force brute. 
+
+3/Je ne pense pas que les calculs necessaires pour l'approximation linéaires doivent être pris en compte dans la complexité de l'attaque parcequ'il est possible de changer de fonction d'approximation linéaire c'est pourquoi la complexité de l'attaque ne les prend pas en compte .
+
